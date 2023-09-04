@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" 
+            text="Back"
+            color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Informacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Info</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>RegistrApp</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      La aplicacion RegistrApp es una App diseñada para facilitar el registro de asistencia
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Inicio</ion-card-title>
+      <ion-card-subtitle>Imagen de referencia</ion-card-subtitle>
+      <img src="assets/Inicio.png" alt="">
+    </ion-card-header>
+    <ion-card-content>
+      En la pagina "Inicio" usted podra ver dos opciones iniciales, "Ingresar" y "Registrarse",
+      al seleccionar alguna de estas opciones sera dirigido a sus respectivas paginas. <br>
+      En la parte superior izquierda de la pagina de inicio se encuentra el boton que despliega el siguiente menu
+      de navegacion:
+      <br>
+      <img src="assets/Desplegable.png" alt="">
+      En este menu desplegable se encuentra la opcion de viajar a todas las paginas incluyenda esta pagina de informacion
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresar</ion-card-title>
+      <ion-card-subtitle>Imagen de referencia</ion-card-subtitle>
+      <img src="assets/Ingreso.png" alt="">
+    </ion-card-header>
+    <ion-card-content>
+      En la pagina "Ingresar" usted debera ingresar sus credenciales en los respectivos campos,
+      luego debe pulsar el boton "Ingresar" para finalizar el ingreso, se mostrara una alerta diciendo
+      que el ingreso fue exitoso y luego sera dirigido al Inicio
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+      <ion-card-subtitle>Imagen de referencia</ion-card-subtitle>
+      <img src="assets/Registro.png" alt="">
+    </ion-card-header>
+    <ion-card-content>
+      En la pagina "Registro" usted debera llenar los campos requeridos para crear su cuenta,
+      <img src="assets/Seleccion.png" alt="">
+      Aqui debera seleccionar la carrera a la que pertenece entre las opciones mostradas (La imagen es solo referencial)
+      <img src="assets/Sede.png" alt="">
+      Aqui debera seleccionar la sede a la que pertenece entre las opciones mostradas (La imagen es solo referencial) <br>
+      luego debe pulsar el boton "Registrarse" para finalizar el proceso, su cuenta sera creada, se mostrara una alerta diciendo
+      que el registro fue exitoso y luego sera dirigido al Inicio
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <img src="assets/Duoc.png" class="ion-padding">
+  </ion-toolbar>
+</ion-footer>

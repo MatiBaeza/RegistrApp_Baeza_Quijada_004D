@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" 
+            text="Back"
+            color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="Titulo">RegistrApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" style="text-align: center;">Registrarse</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-content>
+      <form #login="ngForm" (keyup.enter)="Enviar()">
+        <ion-list>
+          <ion-item>
+            <ion-input color="dark" type="text" placeholder="Nombre Completo" name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-input type="email" placeholder="Correo" name="email" [(ngModel)]="usuario.email"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="usuario.password"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-select placeholder="Carrera" name="carrera" [(ngModel)]="usuario.carrera">
+              <ion-select-option value="Ingenieria Informatica">Ingenieria Informatica</ion-select-option>
+              <ion-select-option value="Analista Programador">Analista Programador</ion-select-option>
+              <ion-select-option value="DBA">DBA</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-select placeholder="Sede" name="carrera" [(ngModel)]="usuario.carrera">
+              <ion-select-option value="Ingenieria Informatica">Maipu</ion-select-option>
+              <ion-select-option value="Analista Programador">Antonio Varas</ion-select-option>
+              <ion-select-option value="DBA">Plaza Oeste</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
+        </ion-list>
+        <ion-button routerLink="/inicio" (click)="Enviar()" expand="block" shape="round">
+          Registrarse
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <img src="assets/Duoc.png" class="ion-padding">
+  </ion-toolbar>
+</ion-footer>
