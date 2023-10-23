@@ -1,0 +1,25 @@
+{
+    "escuelas": [
+        {
+            "Nombre": "Escuela de Informatica y Telecomunicaciones"
+        },
+        {
+            "Nombre": "Escuela de Administracion y Negocios"
+        },
+        {
+            "Nombre": "Escuela de Comunicacion"
+        },
+        {
+            "Nombre": "Escuela de Diseño"
+        },
+        {
+            "Nombre": "Escuela de Gastronomia"
+        },
+        {
+            "Nombre": "Escuela de Salud"
+        },
+        {
+            "Nombre": "Escuela de Ingenieria y Recursos Naturales"
+        }
+    ]
+}

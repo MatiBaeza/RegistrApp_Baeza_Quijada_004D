@@ -1,10 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" 
-            text="Back"
-            color="primary"></ion-back-button>
-    </ion-buttons>
     <ion-title>Informacion</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -61,13 +56,29 @@
     <ion-card-content>
       En la pagina "Registro" usted debera llenar los campos requeridos para crear su cuenta,
       <img src="assets/Seleccion.png" alt="">
+      <br>
       Aqui debera seleccionar la carrera a la que pertenece entre las opciones mostradas (La imagen es solo referencial)
       <img src="assets/Sede.png" alt="">
+      <br>
       Aqui debera seleccionar la sede a la que pertenece entre las opciones mostradas (La imagen es solo referencial) <br>
       luego debe pulsar el boton "Registrarse" para finalizar el proceso, su cuenta sera creada, se mostrara una alerta diciendo
       que el registro fue exitoso y luego sera dirigido al Inicio
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Esta lista esta sujeta a variaciones</ion-card-subtitle>
+      <ion-card-title>Escuelas Disponibles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let c of escuelas; let i=index">
+        <ion-label>{{c['Nombre']}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-button routerLink="/inicio" expand="block" shape="round">
+    Cerrar Sesion
+  </ion-button>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

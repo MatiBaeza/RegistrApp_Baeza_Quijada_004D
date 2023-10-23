@@ -15,29 +15,51 @@
       <ion-title size="large" style="text-align: center;">Ingresar</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card>
-    <ion-card-content>
-      <form #login="ngForm" (keyup.enter)="Enviar()">
-        <ion-list>
-          <ion-item>
-            <ion-input color="dark" type="email" placeholder="Correo" name="email" [(ngModel)]="usuario.email"></ion-input>
-          </ion-item>
-          <br>
-          <ion-item>
-            <ion-input type="password" placeholder="Contraseña"
-                     name="password" [(ngModel)]="usuario.password"></ion-input>
-          </ion-item>
-          <br>
-        </ion-list>
-        <ion-button routerLink="/inicio" (click)="Enviar()" expand="block" shape="round">
-          Ingresar
-        </ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+<ion-card>
+  <ion-card-content>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      
+      <ion-item>
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+        <div style="color: red" *ngIf="loginForm.get('email')?.hasError('required')">
+          *el email es obligatorio
+        </div>
+        <div style="color: red" *ngIf="loginForm.get('email')?.hasError('minlength')">
+          *email debe tener minimo 8 caracteres  
+        </div>
+        <div style="color: red" *ngIf="loginForm.get('email')?.hasError('email')">
+          *tiene que ser de formato email 
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña:</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        <div style="color: red" *ngIf="loginForm.get('password')?.hasError('required')">
+          *La contraseña es obligatoria
+        </div>
+        <div style="color: red" *ngIf="loginForm.get('password')?.hasError('minlength')">
+          *la contraseña debe tener minimo 8 caracteres  
+        </div>
+      </div>
+      <br>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" [disabled]="!loginForm.valid" expand="block" shape="round">
+            Ingresar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+  </ion-card-content>
+</ion-card>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <img src="assets/Duoc.png" class="ion-padding" width="220px" style="position: relative; left: 27px;">
-  </ion-toolbar>
-</ion-footer>

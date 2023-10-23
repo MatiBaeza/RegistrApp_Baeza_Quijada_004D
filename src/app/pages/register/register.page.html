@@ -17,10 +17,10 @@
   </ion-header>
   <ion-card>
     <ion-card-content>
-      <form #login="ngForm" (keyup.enter)="Enviar()">
+      <form #register="ngForm" (keyup.enter)="RegistrarUsuario()">
         <ion-list>
           <ion-item>
-            <ion-input color="dark" type="text" placeholder="Nombre Completo" name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+            <ion-input color="dark" type="text" placeholder="Nombre Completo" name="nombre" [(ngModel)]="usuario.usuario"></ion-input>
           </ion-item>
           <br>
           <ion-item>
@@ -32,7 +32,7 @@
           </ion-item>
           <br>
           <ion-item>
-            <ion-select placeholder="Carrera" name="carrera" [(ngModel)]="usuario.carrera">
+            <ion-select placeholder="Carrera" name="carrera" [(ngModel)]="usuario.carreras">
               <ion-select-option value="Ingenieria Informatica">Ingenieria Informatica</ion-select-option>
               <ion-select-option value="Analista Programador">Analista Programador</ion-select-option>
               <ion-select-option value="DBA">DBA</ion-select-option>
@@ -40,20 +40,58 @@
           </ion-item>
           <br>
           <ion-item>
-            <ion-select placeholder="Sede" name="carrera" [(ngModel)]="usuario.carrera">
+            <ion-select placeholder="Sede" name="carrera" [(ngModel)]="usuario.sede">
               <ion-select-option value="Ingenieria Informatica">Maipu</ion-select-option>
               <ion-select-option value="Analista Programador">Antonio Varas</ion-select-option>
               <ion-select-option value="DBA">Plaza Oeste</ion-select-option>
             </ion-select>
           </ion-item>
           <br>
+          <ion-item>
+            <ion-select placeholder="rol" name="rol" [(ngModel)]="usuario.role">
+              <ion-select-option value="Alumno">Alumno</ion-select-option>
+              <ion-select-option value="Docente">Docente</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-input type="text" placeholder="Asignatura N°1" name="asig1" [(ngModel)]="usuario.asig1"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-input type="text" placeholder="Asignatura N°2" name="asig2" [(ngModel)]="usuario.asig2"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-select placeholder="anno" name="anno" [(ngModel)]="usuario.anno">
+              <ion-select-option value="2022">2022</ion-select-option>
+              <ion-select-option value="2023">2023</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-select placeholder="semestre" name="semestre" [(ngModel)]="usuario.semestre">
+              <ion-select-option value="Primer Semestre">Primer Semestre</ion-select-option>
+              <ion-select-option value="Segundo Semestre">Segundo Semestre</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-select placeholder="horas" name="horas" [(ngModel)]="usuario.horas">
+              <ion-select-option value="5">5 horas</ion-select-option>
+              <ion-select-option value="7">7 horas</ion-select-option>
+              <ion-select-option value="10">10 horas</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>
         </ion-list>
-        <ion-button routerLink="/inicio" (click)="Enviar()" expand="block" shape="round">
+        <ion-button routerLink="/login" (click)="RegistrarUsuario()" expand="block" shape="round">
           Registrarse
         </ion-button>
       </form>
     </ion-card-content>
   </ion-card>
+  
 </ion-content>
 <ion-footer>
   <ion-toolbar>

@@ -1,0 +1,34 @@
+{
+  "usuarios": [
+    {
+      "usuario": "mati.baeza",
+      "email": "mati.baeza@duocuc.cl",
+      "password": "12345678",
+      "carreras": "ingenieria en informatica",
+      "sede": "Maipu",
+      "role": "alumno",
+      "isactive": true,
+      "asig1": "Lenguaje",
+      "asig2": "Matematica",
+      "anno": "2023",
+      "semestre": "Segundo Semestre",
+      "horas": "10 horas",
+      "id": 2
+    },
+    {
+      "usuario": "m-baeza",
+      "email": "m-baeza@outlook.cl",
+      "password": "123456789",
+      "carreras": "Ingenieria Informatica",
+      "sede": "Ingenieria Informatica",
+      "role": "Docente",
+      "asig1": "Matematicas",
+      "asig2": "Ciencias",
+      "anno": "2023",
+      "semestre": "Segundo Semestre",
+      "horas": "10",
+      "isactive": true,
+      "id": 3
+    }
+  ]
+}

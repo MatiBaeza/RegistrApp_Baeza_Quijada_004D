@@ -1,45 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { User } from '../interfaces/interfaces';
+import { ApiCrudService } from 'src/app/servicios/api-crud.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
+
+
 export class RegisterPage implements OnInit {
 
-  constructor(private alertController: AlertController) { }
+
+  constructor(private alertController: AlertController,
+              private apiCrud: ApiCrudService,
+              private router: Router) {}
 
   ngOnInit() {
   }
 
-  usuario={
-    nombre:'',
+  usuario: User={
+    usuario:'',
     email:'',
-    edad:'',
     password:'',
-    carrera:'',
+    carreras:'',
     sede:'',
+    role: '',
+    asig1: '',
+    asig2: '',
+    anno: '',
+    semestre: '',
+    horas: '',
+    isactive: true
   }
 
-  async MostrarMensaje() {
-    const alert = await this.alertController.create({
-      header:'Registro Exitoso',
-      message: 'Bienvenido/a a RegistrApp',
-      buttons: ['OK'],
-    });
-    await alert.present();
+  RegistrarUsuario(){
+    this.apiCrud.CrearUsuario(this.usuario).subscribe();
+    this.router.navigateByUrl("/informacion");
   }
 
-
-  Enviar(){
-    console.log('Registrado con exito');
-    this.MostrarMensaje();
-    this.usuario.nombre='';
-    this.usuario.email='';
-    this.usuario.edad='';
-    this.usuario.password='';
-    this.usuario.carrera='';
-    this.usuario.sede='';
-  }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutorizadoGuard } from './guards/autorizado.guard';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
   {
     path: 'informacion',
     loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
-  },
+  }
 ];
 
 @NgModule({
